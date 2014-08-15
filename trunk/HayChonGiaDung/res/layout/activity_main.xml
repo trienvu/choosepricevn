@@ -21,31 +21,40 @@
             <ImageView
                 android:id="@+id/imgBack"
                 android:layout_width="0dp"
-                android:layout_weight="3"
                 android:layout_height="fill_parent"
+                android:layout_weight="3"
                 android:src="@android:drawable/ic_menu_revert" />
 
             <TextView
-                android:layout_weight="5"
                 android:id="@+id/tvNumber"
                 android:layout_width="0dp"
-                android:textSize="18sp"
                 android:layout_height="fill_parent"
+                android:layout_weight="5"
                 android:gravity="center"
-                android:text="Number" />
+                android:text="Câu 69"
+                android:textSize="18sp" />
+            
+            <TextView
+                android:id="@+id/tvCoin"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="15 coin"
+                android:textSize="18sp" />
 
             <ImageView
-                android:layout_weight="2"
                 android:id="@+id/imgHelp"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
+                android:layout_weight="2"
                 android:src="@android:drawable/ic_dialog_info" />
 
             <ImageView
-                android:layout_weight="2"
                 android:id="@+id/imgShare"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
+                android:layout_weight="2"
                 android:src="@android:drawable/ic_dialog_email" />
         </LinearLayout>
 
@@ -54,7 +63,9 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="205dp"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
             android:background="@android:color/black" >
 
             <ImageView
@@ -72,6 +83,16 @@
                 android:layout_centerInParent="true" />
         </RelativeLayout>
 
+        <TextView
+            android:id="@+id/tvSuggestion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Gợi ý"
+            android:textColor="@android:color/black" />
+
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >
@@ -82,6 +103,7 @@
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:text="Mô tả sản phẩm"
                 android:textColor="@android:color/black" />
         </ScrollView>
     </LinearLayout>
