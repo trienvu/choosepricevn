@@ -45,6 +45,9 @@ public class MainActivity extends Activity {
 	private TextView mTvNumber;
 	private TextView mTvCoin;
 	private TextView mTvName;
+	private TextView mTvMadein;
+	private TextView mTvVendor;
+	private TextView mTvQuantity;
 	
 	
 
@@ -63,6 +66,9 @@ public class MainActivity extends Activity {
 		this.mBtnSubmit = (Button) this.findViewById(R.id.btnSubmit);
 		this.mProgressBar = (ProgressBar)this.findViewById(R.id.progressBar);
 		this.mTvName = (TextView)this.findViewById(R.id.tvName);
+		this.mTvMadein = (TextView)this.findViewById(R.id.tvMadein);
+		this.mTvVendor = (TextView)this.findViewById(R.id.tvVendor);
+		this.mTvQuantity= (TextView)this.findViewById(R.id.tvQuantity);
 
 		// setup events
 		this.mBtnSubmit.setOnClickListener(new OnClickListener() {
@@ -119,6 +125,9 @@ public class MainActivity extends Activity {
 
 		this.mTvDesc.setText(text);
 		this.mTvName.setText(this.mGiaDungEntity.getName());
+		this.mTvVendor.setText("NSX: " + this.mGiaDungEntity.getVendor());
+		this.mTvMadein.setText("MADE: " + this.mGiaDungEntity.getMadeIn());
+		this.mTvQuantity.setText("SL: " + this.mGiaDungEntity.getQuantity());
 
 		// increment
 		mIndex++;
