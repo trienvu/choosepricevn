@@ -45,7 +45,7 @@ public class GiaDungEntity {
 		this.madeIn = cursor.getString(4);
 		this.vendor = cursor.getString(5);
 		this.quantity = cursor.getString(6);
-		this.desc  = cursor.getString(6);
+		this.desc  = cursor.getString(7);
 	}
  
 
