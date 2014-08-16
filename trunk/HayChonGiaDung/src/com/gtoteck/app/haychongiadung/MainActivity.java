@@ -54,6 +54,9 @@ public class MainActivity extends Activity {
 	private TextView mTvMadein;
 	private TextView mTvVendor;
 	private TextView mTvQuantity;
+	
+	//dialog
+	private InputDialog mInputDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,9 @@ public class MainActivity extends Activity {
 		this.mTvCoin = (TextView)this.findViewById(R.id.tvCoin);
 		this.mImgHelp= (ImageView)this.findViewById(R.id.imgHelp);
 		this.mTvSuggestion = (TextView)this.findViewById(R.id.tvSuggestion);
+		
+		//create dialog
+		mInputDialog = new InputDialog(mContext);
 
 		// setup events
 		this.mBtnSubmit.setOnClickListener(new OnClickListener() {
@@ -86,7 +92,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				next();
+				mInputDialog.show();
 			}
 		});
 
