@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="8"
+            android:background="@android:color/black"
+            android:gravity="center|right"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:maxLength="24"
+            android:text="690,000"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:background="@android:color/black"
+            android:src="@android:drawable/ic_delete" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            
+            style="@style/button_caculator"
+            android:text="@string/key_9" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_8" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_4" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_5" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_1" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_2" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_0" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_comma" />
+
+        <Button
+            style="@style/button_caculator"
+            android:text="@string/key_c" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_gray_bg"
+        android:text="Close" />
+
+</LinearLayout>
