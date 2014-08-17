@@ -38,7 +38,7 @@
         android:layout_marginLeft="@dimen/actionbar_iv_help_margin_left"
         android:layout_marginRight="@dimen/actionbar_iv_help_margin_right"
         android:gravity="center"
-        android:background="#33CC33"
+        android:background="#37FE00"
         android:textColor="#ff0000ff"
         android:text="@string/actionbar_tv_number"
         android:textSize="@dimen/actionbar_tv_level_textsize"
