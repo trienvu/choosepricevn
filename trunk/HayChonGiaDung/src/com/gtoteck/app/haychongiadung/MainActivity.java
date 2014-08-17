@@ -57,8 +57,8 @@ public class MainActivity extends Activity {
 	private TextView mTvMadein;
 	private TextView mTvVendor;
 	private TextView mTvQuantity;
-	private LinearLayout mViewInfoSum;
-	private ScrollView mViewInfoDetails;
+	private ScrollView mScvInfoSum;
+	private ScrollView mScvInfoDetails;
 
 	private TextView mTvInfoSum;
 	private TextView mTvInfoDetails;
@@ -90,9 +90,9 @@ public class MainActivity extends Activity {
 		this.mImgHelp = (ImageView) this.findViewById(R.id.imgHelp);
 		// this.mTvSuggestion = (TextView) this.findViewById(R.id.tvSuggestion);
 
-		this.mViewInfoSum = (LinearLayout) this.findViewById(R.id.viewInfoSum);
-		this.mViewInfoDetails = (ScrollView) this
-				.findViewById(R.id.viewInfoDetails);
+		this.mScvInfoSum = (ScrollView) this.findViewById(R.id.scvInfoSum);
+		this.mScvInfoDetails = (ScrollView) this
+				.findViewById(R.id.scvInfoDetails);
 		this.mTvInfoSum = (TextView) this.findViewById(R.id.tvInfoSum);
 		this.mTvInfoDetails = (TextView) this.findViewById(R.id.tvInfoDetails);
 		// create dialog
@@ -179,8 +179,8 @@ public class MainActivity extends Activity {
 		mTvInfoSum.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mViewInfoSum.setVisibility(View.VISIBLE);
-				mViewInfoDetails.setVisibility(View.GONE);
+				mScvInfoSum.setVisibility(View.VISIBLE);
+				mScvInfoDetails.setVisibility(View.GONE);
 				mTvInfoDetails
 						.setBackgroundResource(R.drawable.btn_info_normal);
 				mTvInfoSum.setBackgroundResource(R.drawable.btn_info_pressed);
@@ -189,8 +189,8 @@ public class MainActivity extends Activity {
 		mTvInfoDetails.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mViewInfoSum.setVisibility(View.GONE);
-				mViewInfoDetails.setVisibility(View.VISIBLE);
+				mScvInfoSum.setVisibility(View.GONE);
+				mScvInfoDetails.setVisibility(View.VISIBLE);
 				mTvInfoDetails
 						.setBackgroundResource(R.drawable.btn_info_pressed);
 				mTvInfoSum.setBackgroundResource(R.drawable.btn_info_normal);
