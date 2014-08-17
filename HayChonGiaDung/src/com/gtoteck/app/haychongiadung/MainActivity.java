@@ -12,7 +12,9 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,7 +57,11 @@ public class MainActivity extends Activity {
 	private TextView mTvMadein;
 	private TextView mTvVendor;
 	private TextView mTvQuantity;
+	private LinearLayout mViewInfoSum;
+	private ScrollView mViewInfoDetails;
 
+	private TextView mTvInfoSum;
+	private TextView mTvInfoDetails;
 	// dialog
 	private InputDialog mInputDialog;
 
@@ -82,8 +88,13 @@ public class MainActivity extends Activity {
 		this.mTvNumber = (TextView) this.findViewById(R.id.tvNumber);
 		this.mTvCoin = (TextView) this.findViewById(R.id.tvCoin);
 		this.mImgHelp = (ImageView) this.findViewById(R.id.imgHelp);
-		this.mTvSuggestion = (TextView) this.findViewById(R.id.tvSuggestion);
+		// this.mTvSuggestion = (TextView) this.findViewById(R.id.tvSuggestion);
 
+		this.mViewInfoSum = (LinearLayout) this.findViewById(R.id.viewInfoSum);
+		this.mViewInfoDetails = (ScrollView) this
+				.findViewById(R.id.viewInfoDetails);
+		this.mTvInfoSum = (TextView) this.findViewById(R.id.tvInfoSum);
+		this.mTvInfoDetails = (TextView) this.findViewById(R.id.tvInfoDetails);
 		// create dialog
 		mInputDialog = new InputDialog(mContext);
 		mInputDialog.setmBtnOkClickListener(new OnClickListener() {
@@ -96,13 +107,16 @@ public class MainActivity extends Activity {
 				if (comparePrice(f)) {
 					SoundUtil.hexat(mContext, SoundUtil.SFX_PASS);
 					next();
-				}else{
+				} else {
 					SoundUtil.hexat(mContext, SoundUtil.OVER);
 				}
 			}
 		});
 
 		// setup events
+
+		// Set view product info
+		viewProductInfo();
 		this.mBtnSubmit.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -159,6 +173,30 @@ public class MainActivity extends Activity {
 
 		// call question
 		this.next();
+	}
+
+	private void viewProductInfo() {
+		mTvInfoSum.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mViewInfoSum.setVisibility(View.VISIBLE);
+				mViewInfoDetails.setVisibility(View.GONE);
+				mTvInfoDetails
+						.setBackgroundResource(R.drawable.btn_info_normal);
+				mTvInfoSum.setBackgroundResource(R.drawable.btn_info_pressed);
+			}
+		});
+		mTvInfoDetails.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mViewInfoSum.setVisibility(View.GONE);
+				mViewInfoDetails.setVisibility(View.VISIBLE);
+				mTvInfoDetails
+						.setBackgroundResource(R.drawable.btn_info_pressed);
+				mTvInfoSum.setBackgroundResource(R.drawable.btn_info_normal);
+			}
+		});
+
 	}
 
 	private boolean comparePrice(float input) {
