@@ -221,7 +221,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 	}
 
 	private void addValue(String value) {
-		mValue += value;
+		mValue += value;  
 		this.mTvNumber.setText(mValue);
 	}
 
