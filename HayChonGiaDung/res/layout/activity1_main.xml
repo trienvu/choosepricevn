@@ -66,7 +66,9 @@
                 android:background="@drawable/btn_pressed"
                 android:gravity="center"
                 android:tag="tab0"
-                android:text="Sản phẩm" />
+                android:text="Sản phẩm"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
@@ -75,7 +77,9 @@
                 android:background="@drawable/btn_normal"
                 android:gravity="center"
                 android:tag="tab1"
-                android:text="Chi tiết" />
+                android:text="Chi tiết"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <RelativeLayout
