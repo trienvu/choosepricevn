@@ -28,9 +28,9 @@ public class MainActivity extends Activity {
 	private Context mContext = this;
 
 	private int mIndex = 0;
-	
+
 	private int mSize = 0;
-	
+
 	private int mRuby = 0;
 
 	private AQuery mAQuery;
@@ -54,8 +54,8 @@ public class MainActivity extends Activity {
 	private TextView mTvMadein;
 	private TextView mTvVendor;
 	private TextView mTvQuantity;
-	
-	//dialog
+
+	// dialog
 	private InputDialog mInputDialog;
 
 	@Override
@@ -78,13 +78,27 @@ public class MainActivity extends Activity {
 		this.mTvQuantity = (TextView) this.findViewById(R.id.tvQuantity);
 		this.mImgBack = (ImageView) this.findViewById(R.id.imgBack);
 		this.mImgShare = (ImageView) this.findViewById(R.id.imgShare);
-		this.mTvNumber = (TextView)this.findViewById(R.id.tvNumber);
-		this.mTvCoin = (TextView)this.findViewById(R.id.tvCoin);
-		this.mImgHelp= (ImageView)this.findViewById(R.id.imgHelp);
-		this.mTvSuggestion = (TextView)this.findViewById(R.id.tvSuggestion);
-		
-		//create dialog
+		this.mTvNumber = (TextView) this.findViewById(R.id.tvNumber);
+		this.mTvCoin = (TextView) this.findViewById(R.id.tvCoin);
+		this.mImgHelp = (ImageView) this.findViewById(R.id.imgHelp);
+		this.mTvSuggestion = (TextView) this.findViewById(R.id.tvSuggestion);
+
+		// create dialog
 		mInputDialog = new InputDialog(mContext);
+		mInputDialog.setmBtnOkClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float f = (Float) v.getTag();
+
+				float price = (float) mGiaDungEntity.getPrice();
+
+				if (f == price) {
+					next();
+				}
+			}
+		});
 
 		// setup events
 		this.mBtnSubmit.setOnClickListener(new OnClickListener() {
@@ -116,26 +130,26 @@ public class MainActivity extends Activity {
 						.captureLayoutGoodQuality(root);
 
 				Uri imageUri = CaptureLayoutUtil.getImageUri(mContext, bitmap);
-				
+
 				CaptureLayoutUtil.shareToFacebook(mContext, imageUri);
 
 				bitmap.recycle();
 				bitmap = null;
 			}
 		});
-		
+
 		this.mImgHelp.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 
 		// init db
 		this.mGiaDungImpl = new GiaDungImpl(mContext);
-		
+
 		mSize = this.mGiaDungImpl.getSize();
 
 		// init aquery
@@ -146,7 +160,7 @@ public class MainActivity extends Activity {
 	}
 
 	private void next() {
-		if(mIndex >=  mSize){
+		if (mIndex >= mSize) {
 			Toast.makeText(mContext, "You win", Toast.LENGTH_LONG).show();
 			return;
 		}
@@ -180,7 +194,7 @@ public class MainActivity extends Activity {
 
 		Spanned text = Html.fromHtml(this.mGiaDungEntity.getDesc());
 
-		this.mTvNumber.setText(String.valueOf((mIndex +1) + ""));
+		this.mTvNumber.setText(String.valueOf((mIndex + 1) + ""));
 		this.mTvDesc.setText(text);
 		this.mTvName.setText(this.mGiaDungEntity.getName());
 		this.mTvVendor.setText("NSX: " + this.mGiaDungEntity.getVendor());
