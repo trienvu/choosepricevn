@@ -3,13 +3,14 @@
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context="${relativePackage}.${activityClass}" >
+    android:background="@android:color/white" >
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
+        android:background="@android:color/white"
         android:orientation="vertical" >
 
         <!-- action bar -->
@@ -18,51 +19,78 @@
 
         <!-- view product -->
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Tên sản phẩm"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="205dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/view_round_corners" >
+
+            <ImageView
+                android:id="@+id/imgProduct"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="2.5dp"
+                android:background="@android:color/white"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal" >
 
-            <RelativeLayout
+            <TextView
                 android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="6"
-                android:background="@drawable/view_round_corners" >
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_pressed"
+                android:gravity="center"
+                android:tag="tab0"
+                android:text="Sản phẩm" />
 
-                <ImageView
-                    android:id="@+id/imgProduct"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_margin="2.5dp"
-                    android:background="@android:color/white"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitCenter" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_normal"
+                android:gravity="center"
+                android:tag="tab1"
+                android:text="Chi tiết" />
+        </LinearLayout>
 
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
-            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" >
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="4"
                 android:orientation="vertical"
                 android:paddingLeft="2dp"
                 android:paddingRight="1.5dp" >
-
-                <TextView
-                    android:id="@+id/tvName"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tên sản phẩm"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="fill_parent"
@@ -111,34 +139,35 @@
                     android:layout_marginTop="5dp"
                     android:background="@android:color/black" />
             </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvSuggestion"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="5dp"
-            android:text="Gợi ý"
-            android:textColor="@android:color/black"
-            android:visibility="gone" />
-
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
 
             <TextView
-                android:id="@+id/tvDesc"
+                android:id="@+id/tvSuggestion"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:gravity="center"
                 android:layout_marginRight="20dp"
-                android:text="Mô tả sản phẩm"
-                android:textStyle="bold"
-                android:textColor="@android:color/black" />
-        </ScrollView>
+                android:layout_marginTop="5dp"
+                android:text="Gợi ý"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/tvDesc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="Mô tả sản phẩm"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </ScrollView>
+        </RelativeLayout>
     </LinearLayout>
 
     <Button
@@ -146,9 +175,10 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:background="#37FE00"
-        android:textStyle="bold"
+        android:text="Nhập giá"
         android:textSize="20sp"
-        android:text="Nhập giá" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

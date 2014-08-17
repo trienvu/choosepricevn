@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Action bar -->
+    <dimen name="actionbar_iv_back_width_height">50.0dp</dimen>
+    <dimen name="actionbar_iv_back_padding_left">2.0dp</dimen>
+    <dimen name="actionbar_iv_back_padding_top">1.0dp</dimen>
+    <dimen name="actionbar_iv_back_margin_left_right">2.0dp</dimen>
+    <dimen name="actionbar_iv_help_width_height">40.0dp</dimen>
+    <dimen name="actionbar_iv_help_margin_left">3.0dp</dimen>
+    <dimen name="actionbar_iv_help_margin_right">2.0dp</dimen>
+    <dimen name="actionbar_tv_level_width">90.0dip</dimen>
+    <dimen name="actionbar_tv_level_textsize">31.0dp</dimen>
+    <dimen name="actionbar_tv_ruby_height">50.0dip</dimen>
+    <dimen name="actionbar_tv_ruby_padding_left">5.0dp</dimen>
+    <dimen name="actionbar_tv_ruby_padding_right">18.0dp</dimen>
+
+</resources>
