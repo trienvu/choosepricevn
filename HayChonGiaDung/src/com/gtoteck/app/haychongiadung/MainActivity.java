@@ -1,7 +1,11 @@
 package com.gtoteck.app.haychongiadung;
 
+import java.util.Random;
+
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -13,10 +17,10 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.TextView; 
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
@@ -46,7 +50,7 @@ public class MainActivity extends Activity {
 
 	// componets ui
 	private Button mBtnSubmit;
-	private TextView mTvDesc; 
+	private TextView mTvDesc;
 	private ImageView mImgProduct;
 	private ImageView mImgBack;
 	private ProgressBar mProgressBar;
@@ -102,30 +106,32 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-//				// TODO Auto-generated method stub
+				// // TODO Auto-generated method stub
 				float f = (Float) v.getTag();
 
 				if (comparePrice(f)) {
 					// sound
 					SoundUtil.hexat(mContext, SoundUtil.SFX_PASS);
-					
-					//pass to activity win
+
+					// pass to activity win
 					Intent intent = new Intent(mContext, WinActivity.class);
 					intent.putExtra(Constans.KEY_GIADUNGENTITY, mGiaDungEntity);
 					startActivity(intent);
-					
-					//increment
-					mRuby += 4;; 
-					
-					//save
-					PreferenceUtil.setValue(mContext, Constans.KEY_INDEX_GIADUNG, mIndex);
+
+					// increment
+					mRuby += 4;
+					;
+
+					// save
+					PreferenceUtil.setValue(mContext,
+							Constans.KEY_INDEX_GIADUNG, mIndex);
 					PreferenceUtil.setValue(mContext, Constans.KEY_RUBY, mRuby);
-					
+
 					next();
 				} else {
 					SoundUtil.hexat(mContext, SoundUtil.OVER);
 				}
-			 
+
 			}
 		});
 
@@ -175,7 +181,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-
+				help();
 			}
 		});
 
@@ -186,10 +192,8 @@ public class MainActivity extends Activity {
 		mSize = this.mGiaDungImpl.getSize();
 		mIndex = PreferenceUtil.getValue(mContext, Constans.KEY_INDEX_GIADUNG,
 				0);
-		mRuby =  PreferenceUtil.getValue(mContext, Constans.KEY_RUBY,
-				69);
-		 
-		
+		mRuby = PreferenceUtil.getValue(mContext, Constans.KEY_RUBY, 7000);
+
 		// init aquery
 		this.mAQuery = new AQuery(mContext);
 
@@ -235,10 +239,70 @@ public class MainActivity extends Activity {
 		return false;
 	}
 
+	private void help() {
+
+		AlertDialog.Builder mBuilder = new AlertDialog.Builder(mContext);
+		mBuilder.setMessage("Bạn có thể mất 20 ruby cho mỗi lần gợi ý ?");
+		mBuilder.setPositiveButton("Đồng ý",
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						generateSussgesstion();
+					}
+				});
+
+		mBuilder.setNegativeButton("Hủy bỏ",
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						dialog.dismiss();
+					}
+				});
+		mBuilder.show();
+	}
+
+	private void generateSussgesstion() {
+		if (mRuby >= 20) {
+			int tyLe = (mGiaDungEntity.getPrice() / 100);
+			int priceMin = tyLe * 70;
+
+			int rand = new Random().nextInt(50) + 2;
+
+			priceMin = priceMin + (rand * tyLe);
+
+			String opt = (priceMin > mGiaDungEntity.getPrice()) ? "<" : ">";
+
+	 
+			
+			AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+			builder.setMessage("Sản phẩm có giá " + opt + priceMin+" VND");
+			builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+				}
+			});
+			builder.show();
+
+			//
+			mRuby -= 20;
+			mTvCoin.setText(mRuby + "");
+		} else {
+			Toast.makeText(mContext, "Bạn không đủ ruby !!!", Toast.LENGTH_LONG)
+					.show();
+		}
+	}
+
 	private void next() {
 		mTvCoin.setText(mRuby + "");
 		mTvNumber.setText((mIndex + 1) + "");
-		
+
 		if (mIndex >= mSize) {
 			Intent intent = new Intent(mContext, VictoryActivity.class);
 			startActivity(intent);
