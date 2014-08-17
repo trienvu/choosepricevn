@@ -2,7 +2,7 @@
     xmlns:myview="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="60dip"
-    android:background="@drawable/actionbar_border"
+    android:background="@drawable/top_bar2"
     android:gravity="center"
     android:orientation="horizontal" >
 
@@ -33,12 +33,11 @@
 
     <TextView
         android:id="@+id/tvNumber"
-        android:layout_width="@dimen/actionbar_tv_level_width"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/actionbar_iv_help_margin_left"
         android:layout_marginRight="@dimen/actionbar_iv_help_margin_right"
         android:gravity="center"
-        android:background="#37FE00"
         android:textColor="#ff0000ff"
         android:text="@string/actionbar_tv_number"
         android:textSize="@dimen/actionbar_tv_level_textsize"
@@ -50,8 +49,9 @@
         android:layout_height="@dimen/actionbar_iv_help_width_height"
         android:layout_marginLeft="@dimen/actionbar_iv_help_margin_left"
         android:layout_marginRight="@dimen/actionbar_iv_help_margin_right"
-        android:background="@drawable/ic_help"
+        android:background="@drawable/btn_help"
         android:contentDescription="@string/app_name"
+        android:layout_gravity="center_vertical"
         android:gravity="center"
         android:paddingLeft="@dimen/actionbar_iv_back_padding_left"
         android:paddingRight="0dp"
