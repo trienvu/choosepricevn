@@ -9,10 +9,22 @@
     <dimen name="actionbar_iv_help_width_height">40.0dp</dimen>
     <dimen name="actionbar_iv_help_margin_left">3.0dp</dimen>
     <dimen name="actionbar_iv_help_margin_right">2.0dp</dimen>
-    <dimen name="actionbar_tv_level_width">90.0dip</dimen>
+    <dimen name="actionbar_tv_level_width">110.0dip</dimen>
     <dimen name="actionbar_tv_level_textsize">31.0dp</dimen>
     <dimen name="actionbar_tv_ruby_height">50.0dip</dimen>
     <dimen name="actionbar_tv_ruby_padding_left">5.0dp</dimen>
     <dimen name="actionbar_tv_ruby_padding_right">18.0dp</dimen>
-
+    
+    
+    <!-- Text size -->
+    <dimen name="tv_size_15">15sp</dimen>
+    <dimen name="tv_size_16">16sp</dimen>
+    <dimen name="tv_size_18">18sp</dimen>
+    <dimen name="tv_size_20">20sp</dimen>
+    
+    <!-- activity_main -->
+	<dimen name="main_view_product_height">210dp</dimen>
+	<dimen name="main_view_product_margin_top">2dp</dimen>
+	<dimen name="main_view_product_margin_left_right">10dp</dimen>
+	<dimen name="main_view_product_padding">2dp</dimen>
 </resources>

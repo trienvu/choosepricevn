@@ -9,7 +9,7 @@
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_above="@+id/btnSubmit"
         android:background="@android:color/white"
         android:orientation="vertical" >
 
@@ -25,21 +25,21 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Tên sản phẩm"
-            android:textSize="15sp"
+            android:textSize="@dimen/tv_size_20"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="205dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/view_round_corners" >
+            android:layout_height="@dimen/main_view_product_height"
+            android:layout_marginLeft="@dimen/main_view_product_margin_left_right"
+            android:layout_marginRight="@dimen/main_view_product_margin_left_right"
+            android:background="@drawable/view_round_corners"
+            android:padding="@dimen/main_view_product_padding" >
 
             <ImageView
                 android:id="@+id/imgProduct"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="2.5dp"
                 android:background="@android:color/white"
                 android:contentDescription="@string/app_name"
                 android:scaleType="fitCenter" />
@@ -54,9 +54,9 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/main_view_product_margin_left_right"
+            android:layout_marginRight="@dimen/main_view_product_margin_left_right"
+            android:layout_marginTop="@dimen/main_view_product_margin_top"
             android:orientation="horizontal" >
 
             <TextView
@@ -67,8 +67,8 @@
                 android:background="@drawable/btn_info_pressed"
                 android:gravity="center"
                 android:tag="tab0"
-                android:text="Sản phẩm"
-                android:textSize="16sp"
+                android:text="@string/main_tab_info_sum"
+                android:textSize="@dimen/tv_size_20"
                 android:textStyle="bold" />
 
             <TextView
@@ -79,16 +79,17 @@
                 android:background="@drawable/btn_info_normal"
                 android:gravity="center"
                 android:tag="tab1"
-                android:text="Chi tiết"
-                android:textSize="16sp"
+                android:text="@string/main_tab_info_details"
+                android:textSize="@dimen/tv_size_20"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="@dimen/main_view_product_margin_left_right"
+            android:layout_marginRight="@dimen/main_view_product_margin_left_right"
+            android:layout_marginTop="@dimen/main_view_product_margin_top"
             android:layout_weight="1" >
 
             <ScrollView
@@ -104,18 +105,13 @@
                     android:paddingLeft="2dp"
                     android:paddingRight="1.5dp" >
 
-                    <View
-                        android:layout_width="fill_parent"
-                        android:layout_height="0.5dp"
-                        android:background="@android:color/black" />
-
                     <TextView
                         android:id="@+id/tvMadein"
+                        style="@style/product_info"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Xuất xứ"
-                        android:textSize="13sp" />
+                        android:layout_marginTop="@dimen/main_view_product_margin_top"
+                        android:text="Xuất xứ" />
 
                     <View
                         android:layout_width="fill_parent"
@@ -125,11 +121,11 @@
 
                     <TextView
                         android:id="@+id/tvVendor"
+                        style="@style/product_info"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Nhà cung cấp"
-                        android:textSize="13sp" />
+                        android:layout_marginTop="@dimen/main_view_product_margin_top"
+                        android:text="Nhà cung cấp" />
 
                     <View
                         android:layout_width="fill_parent"
@@ -139,11 +135,11 @@
 
                     <TextView
                         android:id="@+id/tvQuantity"
+                        style="@style/product_info"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Số lượng"
-                        android:textSize="13sp" />
+                        android:layout_marginTop="@dimen/main_view_product_margin_top"
+                        android:text="Số lượng" />
 
                     <View
                         android:layout_width="fill_parent"
@@ -152,7 +148,6 @@
                         android:background="@android:color/black" />
                 </LinearLayout>
             </ScrollView>
-           
 
             <ScrollView
                 android:id="@+id/scvInfoDetails"
@@ -162,14 +157,11 @@
 
                 <TextView
                     android:id="@+id/tvDesc"
+                    style="@style/product_info"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:gravity="center"
-                    android:text="Mô tả sản phẩm"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold" />
+                    android:text="Mô tả sản phẩm" />
             </ScrollView>
         </RelativeLayout>
     </LinearLayout>
@@ -179,10 +171,9 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="#37FE00"
+        android:background="@drawable/btn_next1"
         android:text="Nhập giá"
-        android:textSize="20sp"
+        android:textSize="@dimen/tv_size_20"
         android:textStyle="bold" />
 
 </RelativeLayout>

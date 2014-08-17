@@ -20,6 +20,13 @@
     <string name="key_c">C</string>
     
     <!-- ANHDIEPMMK END -->
+    
+    <!-- TRIENVD BEGIN -->
+	<string name="main_tab_info_sum">Sản phẩm</string>
+	<string name="main_tab_info_details">Chi tiết</string>    
+    
+    
+    <!-- TRIENVD END -->
 
 
 
