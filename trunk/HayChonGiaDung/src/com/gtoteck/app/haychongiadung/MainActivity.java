@@ -22,6 +22,7 @@ import com.androidquery.callback.BitmapAjaxCallback;
 import com.gtoteck.app.dao.GiaDungEntity;
 import com.gtoteck.app.dao.GiaDungImpl;
 import com.gtoteck.app.util.CaptureLayoutUtil;
+import com.gtoteck.app.util.SoundUtil;
 
 public class MainActivity extends Activity {
 
@@ -92,10 +93,11 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				float f = (Float) v.getTag();
 
-				float price = (float) mGiaDungEntity.getPrice();
-
-				if (f == price) {
+				if (comparePrice(f)) {
+					SoundUtil.hexat(mContext, SoundUtil.SFX_PASS);
 					next();
+				}else{
+					SoundUtil.hexat(mContext, SoundUtil.OVER);
 				}
 			}
 		});
@@ -157,6 +159,20 @@ public class MainActivity extends Activity {
 
 		// call question
 		this.next();
+	}
+
+	private boolean comparePrice(float input) {
+		float priceMax = (float) mGiaDungEntity.getPrice();
+		float priceMin = (priceMax / 100f) * 90;
+
+		if ((input < priceMax && input > priceMin) || (input == priceMin)
+				|| (input == priceMax)
+
+		) {
+			return true;
+		}
+
+		return false;
 	}
 
 	private void next() {
