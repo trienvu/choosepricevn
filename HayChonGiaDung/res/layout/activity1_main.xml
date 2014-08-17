@@ -91,77 +91,73 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1" >
 
-            <LinearLayout
+            <ScrollView
+                android:id="@+id/scvInfoSum"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/viewInfoSum"
-                android:orientation="vertical"
-                android:paddingLeft="2dp"
-                android:paddingRight="1.5dp" >
+                android:visibility="visible" >
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/black" />
-
-                <TextView
-                    android:id="@+id/tvMadein"
+                <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Xuất xứ"
-                    android:textSize="13sp" />
+                    android:orientation="vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="1.5dp" >
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@android:color/black" />
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@android:color/black" />
 
-                <TextView
-                    android:id="@+id/tvVendor"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Nhà cung cấp"
-                    android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/tvMadein"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Xuất xứ"
+                        android:textSize="13sp" />
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@android:color/black" />
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/black" />
 
-                <TextView
-                    android:id="@+id/tvQuantity"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Số lượng"
-                    android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/tvVendor"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Nhà cung cấp"
+                        android:textSize="13sp" />
 
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@android:color/black" />
-            </LinearLayout>
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/black" />
 
-            <!-- <TextView
-                android:id="@+id/tvSuggestion"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="5dp"
-                android:text="Gợi ý"
-                android:textColor="@android:color/black"
-                android:visibility="gone" /> -->
+                    <TextView
+                        android:id="@+id/tvQuantity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Số lượng"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/black" />
+                </LinearLayout>
+            </ScrollView>
+           
 
             <ScrollView
+                android:id="@+id/scvInfoDetails"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/viewInfoDetails"
                 android:visibility="gone" >
 
                 <TextView
