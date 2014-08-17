@@ -18,11 +18,16 @@
             android:background="@android:color/black"
             android:gravity="center|right"
             android:maxLength="24"
-            android:padding="2dp"
+            android:padding="5dp"
             android:singleLine="true"
             android:text="690,000"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
 
         <ImageButton
             android:id="@+id/imbDelete"
@@ -32,6 +37,11 @@
             android:background="@drawable/btn_backspace_bg"
             android:src="@android:drawable/ic_delete" />
     </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/white" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -43,16 +53,31 @@
             style="@style/button_caculator"
             android:text="@string/key_7" />
 
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
+
         <Button
             android:id="@+id/btnKey8"
             style="@style/button_caculator"
             android:text="@string/key_8" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
 
         <Button
             android:id="@+id/btnKey9"
             style="@style/button_caculator"
             android:text="@string/key_9" />
     </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/white" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -64,16 +89,31 @@
             style="@style/button_caculator"
             android:text="@string/key_4" />
 
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
+
         <Button
             android:id="@+id/btnKey5"
             style="@style/button_caculator"
             android:text="@string/key_5" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
 
         <Button
             android:id="@+id/btnKey6"
             style="@style/button_caculator"
             android:text="@string/key_6" />
     </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/white" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -85,16 +125,31 @@
             style="@style/button_caculator"
             android:text="@string/key_1" />
 
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
+
         <Button
             android:id="@+id/btnKey2"
             style="@style/button_caculator"
             android:text="@string/key_2" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
 
         <Button
             android:id="@+id/btnKey3"
             style="@style/button_caculator"
             android:text="@string/key_3" />
     </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/white" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -106,10 +161,20 @@
             style="@style/button_caculator"
             android:text="@string/key_0" />
 
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
+
         <Button
             android:id="@+id/btnComma"
             style="@style/button_caculator"
             android:text="@string/key_comma" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
 
         <Button
             android:id="@+id/btnClear"
@@ -117,11 +182,38 @@
             android:text="@string/key_c" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnClose"
+    <View
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/btn_gray_bg"
-        android:text="Close" />
+        android:layout_height="0.5dp"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_gray_bg"
+            android:text="Đồng ý"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_gray_bg"
+            android:text="Hủy"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
 </LinearLayout>
