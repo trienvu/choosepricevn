@@ -2,6 +2,7 @@ package com.gtoteck.app.haychongiadung;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,15 +16,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.TextView; 
 
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.callback.BitmapAjaxCallback;
+import com.gtotech.app.base.Constans;
 import com.gtoteck.app.dao.GiaDungEntity;
 import com.gtoteck.app.dao.GiaDungImpl;
 import com.gtoteck.app.util.CaptureLayoutUtil;
+import com.gtoteck.app.util.PreferenceUtil;
 import com.gtoteck.app.util.SoundUtil;
 
 public class MainActivity extends Activity {
@@ -44,8 +46,7 @@ public class MainActivity extends Activity {
 
 	// componets ui
 	private Button mBtnSubmit;
-	private TextView mTvDesc;
-	private TextView mTvSuggestion;
+	private TextView mTvDesc; 
 	private ImageView mImgProduct;
 	private ImageView mImgBack;
 	private ProgressBar mProgressBar;
@@ -88,35 +89,50 @@ public class MainActivity extends Activity {
 		this.mTvNumber = (TextView) this.findViewById(R.id.tvNumber);
 		this.mTvCoin = (TextView) this.findViewById(R.id.tvCoin);
 		this.mImgHelp = (ImageView) this.findViewById(R.id.imgHelp);
-		// this.mTvSuggestion = (TextView) this.findViewById(R.id.tvSuggestion);
 
 		this.mScvInfoSum = (ScrollView) this.findViewById(R.id.scvInfoSum);
 		this.mScvInfoDetails = (ScrollView) this
 				.findViewById(R.id.scvInfoDetails);
 		this.mTvInfoSum = (TextView) this.findViewById(R.id.tvInfoSum);
 		this.mTvInfoDetails = (TextView) this.findViewById(R.id.tvInfoDetails);
+
 		// create dialog
 		mInputDialog = new InputDialog(mContext);
 		mInputDialog.setmBtnOkClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+//				// TODO Auto-generated method stub
 				float f = (Float) v.getTag();
 
 				if (comparePrice(f)) {
+					// sound
 					SoundUtil.hexat(mContext, SoundUtil.SFX_PASS);
+					
+					//pass to activity win
+					Intent intent = new Intent(mContext, WinActivity.class);
+					intent.putExtra(Constans.KEY_GIADUNGENTITY, mGiaDungEntity);
+					startActivity(intent);
+					
+					//increment
+					mRuby += 4;; 
+					
+					//save
+					PreferenceUtil.setValue(mContext, Constans.KEY_INDEX_GIADUNG, mIndex);
+					PreferenceUtil.setValue(mContext, Constans.KEY_RUBY, mRuby);
+					
 					next();
 				} else {
 					SoundUtil.hexat(mContext, SoundUtil.OVER);
 				}
+			 
 			}
 		});
 
-		// setup events
-
+		/** setup events **/
 		// Set view product info
 		viewProductInfo();
+
 		this.mBtnSubmit.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -166,8 +182,14 @@ public class MainActivity extends Activity {
 		// init db
 		this.mGiaDungImpl = new GiaDungImpl(mContext);
 
+		// init var
 		mSize = this.mGiaDungImpl.getSize();
-
+		mIndex = PreferenceUtil.getValue(mContext, Constans.KEY_INDEX_GIADUNG,
+				0);
+		mRuby =  PreferenceUtil.getValue(mContext, Constans.KEY_RUBY,
+				69);
+		 
+		
 		// init aquery
 		this.mAQuery = new AQuery(mContext);
 
@@ -201,7 +223,7 @@ public class MainActivity extends Activity {
 
 	private boolean comparePrice(float input) {
 		float priceMax = (float) mGiaDungEntity.getPrice();
-		float priceMin = (priceMax / 100f) * 90;
+		float priceMin = (priceMax / 100f) * 80;
 
 		if ((input < priceMax && input > priceMin) || (input == priceMin)
 				|| (input == priceMax)
@@ -214,8 +236,13 @@ public class MainActivity extends Activity {
 	}
 
 	private void next() {
+		mTvCoin.setText(mRuby + "");
+		mTvNumber.setText((mIndex + 1) + "");
+		
 		if (mIndex >= mSize) {
-			Toast.makeText(mContext, "You win", Toast.LENGTH_LONG).show();
+			Intent intent = new Intent(mContext, VictoryActivity.class);
+			startActivity(intent);
+			finish();
 			return;
 		}
 		this.mGiaDungEntity = this.mGiaDungImpl

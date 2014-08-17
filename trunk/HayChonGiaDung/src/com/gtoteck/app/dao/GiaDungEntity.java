@@ -1,9 +1,16 @@
 package com.gtoteck.app.dao;
 
+import java.io.Serializable;
+
 import android.database.Cursor;
 
-public class GiaDungEntity {
+public class GiaDungEntity  implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int id;
 	
 	private String name;
