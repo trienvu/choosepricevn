@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity1_main);
+		setContentView(R.layout.activity_main);
 		this.initUI();
 	}
 
@@ -338,10 +338,9 @@ public class MainActivity extends Activity {
 						ajaxCallback);
 
 		Spanned text = Html.fromHtml(this.mGiaDungEntity.getDesc());
-
 		this.mTvNumber.setText(String.valueOf((mIndex + 1) + ""));
 		this.mTvDesc.setText(text);
-		this.mTvName.setText(this.mGiaDungEntity.getName());
+		this.mTvName.setText(this.mGiaDungEntity.getName().trim());
 		this.mTvVendor.setText("NSX: " + this.mGiaDungEntity.getVendor());
 		this.mTvMadein.setText("MADE: " + this.mGiaDungEntity.getMadeIn());
 		this.mTvQuantity.setText("SL: " + this.mGiaDungEntity.getQuantity());

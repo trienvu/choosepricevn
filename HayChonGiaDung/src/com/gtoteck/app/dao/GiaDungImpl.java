@@ -1,10 +1,10 @@
 package com.gtoteck.app.dao;
 
 import android.content.Context;
-import android.database.Cursor; 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.gtoteck.app.util.DatabaseUtil; 
+import com.gtoteck.app.util.DatabaseUtil;
  
 
 public class GiaDungImpl extends DatabaseUtil implements GiaDungDAO  {
