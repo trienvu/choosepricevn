@@ -208,8 +208,8 @@ public class MainActivity extends Activity {
 				mScvInfoSum.setVisibility(View.VISIBLE);
 				mScvInfoDetails.setVisibility(View.GONE);
 				mTvInfoDetails
-						.setBackgroundResource(R.drawable.btn_info_normal);
-				mTvInfoSum.setBackgroundResource(R.drawable.btn_info_pressed);
+						.setBackgroundResource(R.drawable.btn_sp_detail_normal);
+				mTvInfoSum.setBackgroundResource(R.drawable.btn_sp_sum_pressed);
 			}
 		});
 		mTvInfoDetails.setOnClickListener(new View.OnClickListener() {
@@ -218,8 +218,8 @@ public class MainActivity extends Activity {
 				mScvInfoSum.setVisibility(View.GONE);
 				mScvInfoDetails.setVisibility(View.VISIBLE);
 				mTvInfoDetails
-						.setBackgroundResource(R.drawable.btn_info_pressed);
-				mTvInfoSum.setBackgroundResource(R.drawable.btn_info_normal);
+						.setBackgroundResource(R.drawable.btn_sp_detail_pressed);
+				mTvInfoSum.setBackgroundResource(R.drawable.btn_sp_sum_normal);
 			}
 		});
 
@@ -276,18 +276,17 @@ public class MainActivity extends Activity {
 
 			String opt = (priceMin > mGiaDungEntity.getPrice()) ? "<" : ">";
 
-	 
-			
 			AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-			builder.setMessage("Sản phẩm có giá " + opt + priceMin+" VND");
-			builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-				
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					// TODO Auto-generated method stub
-					dialog.dismiss();
-				}
-			});
+			builder.setMessage("Sản phẩm có giá " + opt + priceMin + " VND");
+			builder.setNegativeButton("OK",
+					new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+							dialog.dismiss();
+						}
+					});
 			builder.show();
 
 			//
