@@ -3,7 +3,8 @@
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white" >
+    android:background="@android:color/white"
+    android:gravity="center_horizontal" >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -19,20 +20,12 @@
 
         <!-- view product -->
 
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Tên sản phẩm"
-            android:textSize="@dimen/tv_size_23"
-            android:textStyle="bold" />
-
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="@dimen/main_view_product_height"
             android:layout_marginLeft="@dimen/main_view_product_margin_left_right"
             android:layout_marginRight="@dimen/main_view_product_margin_left_right"
+            android:layout_marginTop="5dp"
             android:background="@drawable/view_round_corners"
             android:padding="@dimen/main_view_product_padding" >
 
@@ -64,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_info_pressed"
+                android:background="@drawable/btn_sp_sum_pressed"
                 android:gravity="center"
                 android:tag="tab0"
                 android:text="@string/main_tab_info_sum"
@@ -76,7 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_info_normal"
+                android:background="@drawable/btn_sp_detail_normal"
                 android:gravity="center"
                 android:tag="tab1"
                 android:text="@string/main_tab_info_details"
@@ -104,6 +97,21 @@
                     android:orientation="vertical"
                     android:paddingLeft="2dp"
                     android:paddingRight="1.5dp" >
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Tên sản phẩm"
+                        android:textSize="@dimen/tv_size_23"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/black" />
 
                     <TextView
                         android:id="@+id/tvMadein"
@@ -171,7 +179,9 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/btn_info_pressed1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/search_bar_bg"
+        android:gravity="center"
         android:text="Nhập giá"
         android:textSize="@dimen/tv_size_20"
         android:textStyle="bold" />

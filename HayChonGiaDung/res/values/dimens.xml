@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Action bar -->
-    <dimen name="actionbar_iv_back_width_height">50.0dp</dimen>
+    <dimen name="actionbar_iv_back_width_height">45.0dp</dimen>
     <dimen name="actionbar_iv_back_padding_left">2.0dp</dimen>
     <dimen name="actionbar_iv_back_padding_top">1.0dp</dimen>
     <dimen name="actionbar_iv_back_margin_left_right">2.0dp</dimen>

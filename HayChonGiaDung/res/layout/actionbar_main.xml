@@ -2,67 +2,68 @@
     xmlns:myview="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="60dip"
-    android:background="@drawable/top_bar2"
+    android:background="@drawable/top_bar4"
     android:gravity="center"
-    android:orientation="horizontal" >
+   
+    android:orientation="horizontal"
+    android:weightSum="11" >
 
     <ImageView
         android:id="@+id/imgBack"
-        android:layout_width="@dimen/actionbar_iv_back_width_height"
+        android:layout_width="0dp"
         android:layout_height="@dimen/actionbar_iv_back_width_height"
-        android:layout_marginLeft="@dimen/actionbar_iv_back_margin_left_right"
-        android:layout_marginRight="@dimen/actionbar_iv_back_margin_left_right"
+        android:layout_weight="2"
         android:contentDescription="@string/app_name"
         android:gravity="center"
         android:paddingLeft="@dimen/actionbar_iv_back_padding_left"
         android:paddingRight="0dp"
         android:paddingTop="@dimen/actionbar_iv_back_padding_top"
-        android:src="@drawable/btn_home" />
+        android:src="@drawable/btn_back_selector" />
 
     <ImageView
         android:id="@+id/imgShare"
-        android:layout_width="@dimen/actionbar_iv_help_width_height"
-        android:layout_height="@dimen/actionbar_iv_help_width_height"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/actionbar_iv_back_width_height"
         android:layout_marginLeft="@dimen/actionbar_iv_help_margin_left"
         android:layout_marginRight="@dimen/actionbar_iv_help_margin_right"
-        android:background="@drawable/btn_share"
+        android:layout_weight="2"
         android:contentDescription="@string/app_name"
         android:gravity="center"
         android:paddingLeft="@dimen/actionbar_iv_back_padding_left"
-        android:paddingRight="0dp" />
+        android:paddingRight="0dp"
+        android:src="@drawable/btn_share" />
 
     <TextView
         android:id="@+id/tvNumber"
-        android:layout_width="125dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/actionbar_iv_help_margin_left"
-        android:layout_marginRight="@dimen/actionbar_iv_help_margin_right"
+        android:layout_weight="3"
+        android:background="@drawable/btn_level"
         android:gravity="center"
+        android:text="123"
+        android:layout_gravity="center"
         android:textColor="#ff0000ff"
-        android:text="@string/actionbar_tv_number"
         android:textSize="@dimen/actionbar_tv_level_textsize"
         android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imgHelp"
-        android:layout_width="@dimen/actionbar_iv_help_width_height"
-        android:layout_height="@dimen/actionbar_iv_help_width_height"
-        android:layout_marginLeft="@dimen/actionbar_iv_help_margin_left"
-        android:layout_marginRight="@dimen/actionbar_iv_help_margin_right"
-        android:background="@drawable/btn_help"
-        android:contentDescription="@string/app_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_weight="1.5"
+        android:contentDescription="@string/app_name"
         android:gravity="center"
         android:paddingLeft="@dimen/actionbar_iv_back_padding_left"
         android:paddingRight="0dp"
-        android:paddingTop="@dimen/actionbar_iv_back_padding_top" />
+        android:paddingTop="@dimen/actionbar_iv_back_padding_top"
+        android:src="@drawable/btn_help_selector" />
 
     <TextView
         android:id="@+id/tvCoin"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/actionbar_tv_ruby_height"
-        android:layout_marginLeft="@dimen/actionbar_iv_help_margin_left"
-        android:layout_marginRight="@dimen/actionbar_iv_help_margin_right"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
         android:background="@drawable/btn_coin"
         android:gravity="center"
         android:paddingLeft="@dimen/actionbar_tv_ruby_padding_left"
