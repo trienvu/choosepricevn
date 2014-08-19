@@ -208,8 +208,8 @@ public class MainActivity extends Activity {
 				mScvInfoSum.setVisibility(View.VISIBLE);
 				mScvInfoDetails.setVisibility(View.GONE);
 				mTvInfoDetails
-						.setBackgroundResource(R.drawable.btn_sp_detail_normal);
-				mTvInfoSum.setBackgroundResource(R.drawable.btn_sp_sum_pressed);
+						.setBackgroundResource(R.drawable.ic_sp_details_normal);
+				mTvInfoSum.setBackgroundResource(R.drawable.ic_sp_sum_focused); 
 			}
 		});
 		mTvInfoDetails.setOnClickListener(new View.OnClickListener() {
@@ -218,8 +218,8 @@ public class MainActivity extends Activity {
 				mScvInfoSum.setVisibility(View.GONE);
 				mScvInfoDetails.setVisibility(View.VISIBLE);
 				mTvInfoDetails
-						.setBackgroundResource(R.drawable.btn_sp_detail_pressed);
-				mTvInfoSum.setBackgroundResource(R.drawable.btn_sp_sum_normal);
+						.setBackgroundResource(R.drawable.ic_sp_details_focused);
+				mTvInfoSum.setBackgroundResource(R.drawable.ic_sp_sum_normal);
 			}
 		});
 
