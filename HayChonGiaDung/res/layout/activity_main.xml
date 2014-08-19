@@ -57,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_sp_sum_pressed"
+                android:background="@drawable/ic_sp_sum_focused"
                 android:gravity="center"
                 android:tag="tab0"
                 android:text="@string/main_tab_info_sum"
@@ -69,7 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_sp_detail_normal"
+                android:background="@drawable/ic_sp_details_normal"
                 android:gravity="center"
                 android:tag="tab1"
                 android:text="@string/main_tab_info_details"
@@ -104,7 +104,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Tên sản phẩm"
-                        android:textSize="@dimen/tv_size_23"
+                        android:textSize="@dimen/tv_sp_size"
                         android:textStyle="bold" />
 
                     <View
@@ -177,10 +177,10 @@
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/main_btn_submit_height"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/search_bar_bg"
+        android:background="@drawable/ic_input"
         android:gravity="center"
         android:text="Nhập giá"
         android:textSize="@dimen/tv_size_20"
