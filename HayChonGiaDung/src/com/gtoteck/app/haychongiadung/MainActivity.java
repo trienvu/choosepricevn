@@ -121,7 +121,6 @@ public class MainActivity extends Activity {
 					// increment
 					mRuby += 4;
 					;
-
 					// save
 					PreferenceUtil.setValue(mContext,
 							Constans.KEY_INDEX_GIADUNG, mIndex);
