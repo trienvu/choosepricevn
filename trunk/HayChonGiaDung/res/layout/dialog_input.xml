@@ -15,14 +15,15 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="8"
-            android:background="@android:color/black"
+            android:background="#DEDEDE"
             android:gravity="center|right"
             android:maxLength="24"
             android:padding="5dp"
             android:singleLine="true"
             android:text="690,000"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <View
             android:layout_width="0.5dp"
@@ -34,8 +35,8 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="2"
-            android:background="@drawable/btn_backspace_bg"
-            android:src="@android:drawable/ic_delete" />
+            android:background="#4D4D4D"
+            android:src="@drawable/btn_num_delete_p1" />
     </LinearLayout>
 
     <View
@@ -197,7 +198,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="@drawable/btn_gray_bg"
+            android:background="@drawable/ic_btn1"
             android:text="Đồng ý"
             android:textColor="@android:color/white" />
 
@@ -211,7 +212,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="@drawable/btn_gray_bg"
+            android:background="@drawable/ic_btn1"
             android:text="Hủy"
             android:textColor="@android:color/white" />
     </LinearLayout>
