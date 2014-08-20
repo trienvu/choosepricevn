@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -54,12 +55,14 @@ public class InputDialog extends Dialog implements OnClickListener {
 	// default contructor
 	public InputDialog(Context context) {
 		super(context);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		// this.mContext = context;
 		setContentView(R.layout.dialog_input);
 		getWindow().setBackgroundDrawableResource(
 				R.drawable.dialog_full_holo_light);
-
-		setTitle("FFFFF");
+		
+		setCancelable(false);
+		//setTitle("FFFFF");
 		init();
 
 	}
