@@ -46,9 +46,10 @@
     <string name="vic_info">Bạn là người tiêu dùng thông thái</string>
     
     
+    <string name="menu_btn_start">Chơi ngay</string>
     
-    
-    
+    <string name="chucmung">CHÍNH XÁC</string>
+    <string name="tv_continues_title">Tiếp tục</string>
     
     <!-- TRIENVD END -->
 
