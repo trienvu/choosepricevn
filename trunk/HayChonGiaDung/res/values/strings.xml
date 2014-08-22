@@ -21,9 +21,33 @@
     
     <!-- ANHDIEPMMK END -->
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <!-- TRIENVD BEGIN -->
 	<string name="main_tab_info_sum">Sản phẩm</string>
 	<string name="main_tab_info_details">Chi tiết</string>    
+    
+    <string name="dialog_input_ok">Đồng ý</string>
+    <string name="dialog_input_cancel">Hủy</string>
+    
+    <string name="close">Chơi lại</string>
+	<string name="victory">^TUYỆT VỜI^</string>    
+    <string name="vic_info">Bạn là người tiêu dùng thông thái</string>
+    
+    
+    
+    
     
     
     <!-- TRIENVD END -->

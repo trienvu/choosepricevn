@@ -20,6 +20,8 @@
     <dimen name="tv_size_20">20sp</dimen>
     <dimen name="tv_size_23">23sp</dimen>
     <dimen name="tv_sp_size">23sp</dimen>
+    <dimen name="tv_sp_info_size">19sp</dimen> 
+    <dimen name="btn_num_size">18sp</dimen>
 
     <!-- activity_main -->
     <dimen name="main_view_product_height">220dp</dimen>
@@ -27,5 +29,21 @@
     <dimen name="main_view_product_margin_left_right">10dp</dimen>
     <dimen name="main_view_product_padding">2dp</dimen>
     <dimen name="main_btn_submit_height">50dp</dimen>
+    <dimen name="main_btn_tab_height">45dp</dimen>
 
+    <!-- Dialog input -->
+    <dimen name="dialog_key_height">50dp</dimen>
+    <dimen name="dialog_key_margin_right">40dp</dimen>
+	
+    
+    <dimen name="victory_tv_congratulation_height">70dip</dimen>
+    <dimen name="victory_tv_play_margin_left_right">30.0dip</dimen>
+    
+    	<!-- win screen -->
+	<dimen name="winscreen_tv_continues_margin_top">5.0dip</dimen>
+	<dimen name="winscreen_tv_continues_margin_bottom">25.0dip</dimen>
+	<dimen name="winscreen_tv_continues_padding_left_right">20.0dip</dimen>
+	<dimen name="winscreen_tv_congratulation_height">80dip</dimen>
+	<dimen name="winscreen_tv_continues_height">48.0dip</dimen>
+    
 </resources>
