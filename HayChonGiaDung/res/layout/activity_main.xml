@@ -55,25 +55,25 @@
             <TextView
                 android:id="@+id/tvInfoSum"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/main_btn_tab_height"
                 android:layout_weight="1"
                 android:background="@drawable/ic_sp_sum_focused"
                 android:gravity="center"
                 android:tag="tab0"
                 android:text="@string/main_tab_info_sum"
-                android:textSize="@dimen/tv_size_20"
+                android:textSize="@dimen/tv_size_18"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvInfoDetails"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/main_btn_tab_height"
                 android:layout_weight="1"
                 android:background="@drawable/ic_sp_details_normal"
                 android:gravity="center"
                 android:tag="tab1"
                 android:text="@string/main_tab_info_details"
-                android:textSize="@dimen/tv_size_20"
+                android:textSize="@dimen/tv_size_18"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -110,7 +110,7 @@
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="0.5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="2dp"
                         android:background="@android:color/black" />
 
                     <TextView
@@ -119,12 +119,13 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/main_view_product_margin_top"
-                        android:text="Xuất xứ" />
+                        android:text="Xuất xứ"
+                        android:textSize="@dimen/tv_sp_info_size" />
 
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="0.5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="2dp"
                         android:background="@android:color/black" />
 
                     <TextView
@@ -133,12 +134,13 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/main_view_product_margin_top"
-                        android:text="Nhà cung cấp" />
+                        android:text="Nhà cung cấp"
+                        android:textSize="@dimen/tv_sp_info_size" />
 
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="0.5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="2dp"
                         android:background="@android:color/black" />
 
                     <TextView
@@ -147,12 +149,13 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/main_view_product_margin_top"
-                        android:text="Số lượng" />
+                        android:text="Số lượng"
+                        android:textSize="@dimen/tv_sp_info_size" />
 
                     <View
                         android:layout_width="fill_parent"
                         android:layout_height="0.5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="2dp"
                         android:background="@android:color/black" />
                 </LinearLayout>
             </ScrollView>
@@ -169,7 +172,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Mô tả sản phẩm" />
+                    android:text="Mô tả sản phẩm"
+                    android:textSize="@dimen/tv_sp_info_size" />
             </ScrollView>
         </RelativeLayout>
     </LinearLayout>
@@ -183,7 +187,7 @@
         android:background="@drawable/ic_input"
         android:gravity="center"
         android:text="Nhập giá"
-        android:textSize="@dimen/tv_size_20"
+        android:textSize="@dimen/tv_size_18"
         android:textStyle="bold" />
 
 </RelativeLayout>

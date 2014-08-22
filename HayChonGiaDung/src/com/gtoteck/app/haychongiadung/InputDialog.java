@@ -3,6 +3,7 @@ package com.gtoteck.app.haychongiadung;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -57,12 +58,13 @@ public class InputDialog extends Dialog implements OnClickListener {
 		super(context);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		// this.mContext = context;
+
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setBackgroundDrawable(
+				new ColorDrawable(android.R.color.transparent));
 		setContentView(R.layout.dialog_input);
-		getWindow().setBackgroundDrawableResource(
-				R.drawable.dialog_full_holo_light);
-		
 		setCancelable(false);
-		//setTitle("FFFFF");
+		// setTitle("FFFFF");
 		init();
 
 	}
@@ -224,7 +226,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 	}
 
 	private void addValue(String value) {
-		mValue += value;  
+		mValue += value;
 		this.mTvNumber.setText(mValue);
 	}
 

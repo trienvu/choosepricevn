@@ -22,9 +22,11 @@
     <style name="button_caculator">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/btn_caculate_bg</item>
+        <item name="android:background">@drawable/btn_number_selector</item>
+        <item name="android:textSize">@dimen/btn_num_size</item>
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">35dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_height">@dimen/dialog_key_height</item>
     </style>
 
     <!-- ANHDIEPMMK END -->
@@ -39,7 +41,32 @@
         <item name="android:shadowColor">#ffffffff</item>
         <item name="android:shadowRadius">1.0</item>
     </style>
-
+	
+    
+     <style name="style_more_app_title">
+        <item name="android:textSize">19.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff0000ff</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">4.0</item>
+    </style>
+    
+    <style name="style_tv_continues">
+        <item name="android:textSize">25.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff0000ff</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">4.0</item>
+        <item name="android:paddingLeft">@dimen/winscreen_tv_continues_padding_left_right</item>
+        <item name="android:paddingRight">@dimen/winscreen_tv_continues_padding_left_right</item>
+    </style>
+    
     <!-- TRIEN END -->
 
 </resources>
