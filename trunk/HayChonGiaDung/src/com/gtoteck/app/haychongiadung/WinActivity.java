@@ -2,6 +2,7 @@ package com.gtoteck.app.haychongiadung;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ public class WinActivity extends Activity {
 
 	private TextView mTvName;
 	private TextView mTvPrice; 
+	private TextView mTvContinue;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,16 @@ public class WinActivity extends Activity {
 		// set data
 		mTvName.setText(dungEntity.getName());
 		mTvPrice.setText(dungEntity.getPrice() + " VND");
+		
+		mTvContinue = (TextView) this.findViewById(R.id.tvContinue);
+		mTvContinue.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 		
 	}
 

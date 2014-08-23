@@ -191,7 +191,7 @@ public class MainActivity extends Activity {
 		mSize = this.mGiaDungImpl.getSize();
 		mIndex = PreferenceUtil.getValue(mContext, Constans.KEY_INDEX_GIADUNG,
 				0);
-		mRuby = PreferenceUtil.getValue(mContext, Constans.KEY_RUBY, 7000);
+		mRuby = PreferenceUtil.getValue(mContext, Constans.KEY_RUBY, 69);
 
 		// init aquery
 		this.mAQuery = new AQuery(mContext);
@@ -332,7 +332,7 @@ public class MainActivity extends Activity {
 		this.mAQuery
 				.id(this.mImgProduct)
 				.progress(this.mProgressBar)
-				.image(image, true, true, 0, R.drawable.ic_launcher,
+				.image(image, false, false, 0, R.drawable.ic_launcher,
 						ajaxCallback);
 
 		Spanned text = Html.fromHtml(this.mGiaDungEntity.getDesc());
