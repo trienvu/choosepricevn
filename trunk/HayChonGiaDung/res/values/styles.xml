@@ -66,6 +66,18 @@
         <item name="android:paddingRight">@dimen/winscreen_tv_continues_padding_left_right</item>
     </style>
 
+    
+     <style name="style_team_slogan">
+        <item name="android:textSize">19.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff0000ff</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">4.0</item>
+    </style>
+    
     <!-- TRIEN END -->
 
 </resources>
