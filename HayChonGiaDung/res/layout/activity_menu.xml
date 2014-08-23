@@ -6,7 +6,9 @@
 
     <Button
         android:id="@+id/btnPlay"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
@@ -17,16 +19,6 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:typeface="serif" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_above="@id/btnPlay"
-        android:layout_alignParentLeft="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="40dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_app1" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -58,5 +50,14 @@
             android:background="@drawable/ic_info"
             android:contentDescription="@string/app_name" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@+id/btnPlay"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="69dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_app1" />
 
 </RelativeLayout>
