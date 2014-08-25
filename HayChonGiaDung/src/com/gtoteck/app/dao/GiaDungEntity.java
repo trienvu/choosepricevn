@@ -2,6 +2,9 @@ package com.gtoteck.app.dao;
 
 import java.io.Serializable;
 
+import com.gtotech.app.base.Constans;
+import com.gtoteck.app.util.MD5Util;
+
 import android.database.Cursor;
 
 public class GiaDungEntity  implements Serializable{
@@ -81,12 +84,16 @@ public class GiaDungEntity  implements Serializable{
 
 
 	public String getImage() {
+		if(null != image){
+			image = Constans.BASE_URL + MD5Util.MD5(image) + ".abc";
+		}
 		return image;
 	}
 
 
 
 	public void setImage(String image) {
+		 
 		this.image = image;
 	}
 

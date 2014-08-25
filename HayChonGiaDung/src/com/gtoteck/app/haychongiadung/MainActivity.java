@@ -25,14 +25,23 @@ import android.widget.Toast;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.callback.BitmapAjaxCallback;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.gtotech.app.base.Constans;
 import com.gtoteck.app.dao.GiaDungEntity;
 import com.gtoteck.app.dao.GiaDungImpl;
 import com.gtoteck.app.util.CaptureLayoutUtil;
 import com.gtoteck.app.util.PreferenceUtil;
-import com.gtoteck.app.util.SoundUtil;
+import com.gtoteck.app.util.SoundUtil; 
 
 public class MainActivity extends Activity {
+	
+	/** Your ad unit id. Replace with your actual ad unit id. */
+	private static String AD_UNIT_ID = null;
+
+	/** The interstitial ad. */
+	private InterstitialAd interstitialAd;
 
 	private Context mContext = this;
 
@@ -76,6 +85,8 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		this.initUI();
+		
+		setInterstitialAd();
 	}
 
 	private void initUI() {
@@ -345,6 +356,31 @@ public class MainActivity extends Activity {
 
 		// increment
 		mIndex++;
+	}
+	
+	private void setInterstitialAd() {
+		AD_UNIT_ID = getResources().getString(R.string.id_admob);
+
+		// Create an ad.
+		interstitialAd = new InterstitialAd(this);
+		interstitialAd.setAdUnitId(AD_UNIT_ID);
+		AdRequest adRequest = new AdRequest.Builder().build();
+
+		// Set the AdListener.
+		interstitialAd.setAdListener(new AdListener() {
+			@Override
+			public void onAdLoaded() {
+				interstitialAd.show();
+			}
+
+			@Override
+			public void onAdFailedToLoad(int errorCode) {
+
+			}
+		});
+
+		// Load the interstitial ad.
+		interstitialAd.loadAd(adRequest);
 	}
 
 }
