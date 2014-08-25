@@ -20,4 +20,6 @@ public class Constans {
 	public static final int MIN_HEIGHT = 200;
 	
 	public static final int MAX_HEIGHT = 300;
+	
+	public static String BASE_URL = "http://thekids.vn/AndroidApp/HCGD/";
 }
