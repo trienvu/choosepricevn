@@ -1,5 +1,4 @@
 package com.gtoteck.app.haychongiadung;
- 
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -66,7 +65,7 @@ public class MenuActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-				builder.setTitle("Thông tin");
+				builder.setTitle("Thï¿½ng tin");
 				builder.setIcon(android.R.drawable.ic_dialog_info);
 				builder.setMessage(getResources().getText(R.string.version_info)
 						.toString());
@@ -82,5 +81,4 @@ public class MenuActivity extends Activity {
 			}
 		});
 	}
-
 }
