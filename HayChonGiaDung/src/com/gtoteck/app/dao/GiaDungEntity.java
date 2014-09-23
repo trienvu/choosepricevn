@@ -83,10 +83,7 @@ public class GiaDungEntity  implements Serializable{
 
 
 
-	public String getImage() {
-		if(null != image){
-			image = Constans.BASE_URL + MD5Util.MD5(image) + ".abc";
-		}
+	public String getImage() { 
 		return image;
 	}
 
