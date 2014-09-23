@@ -1,5 +1,6 @@
 package com.gtoteck.app.haychongiadung;
 
+import java.io.InputStream;
 import java.util.Random;
 
 import android.app.Activity;
@@ -7,7 +8,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
@@ -33,10 +36,10 @@ import com.gtoteck.app.dao.GiaDungEntity;
 import com.gtoteck.app.dao.GiaDungImpl;
 import com.gtoteck.app.util.CaptureLayoutUtil;
 import com.gtoteck.app.util.PreferenceUtil;
-import com.gtoteck.app.util.SoundUtil; 
+import com.gtoteck.app.util.SoundUtil;
 
 public class MainActivity extends Activity {
-	
+
 	/** Your ad unit id. Replace with your actual ad unit id. */
 	private static String AD_UNIT_ID = null;
 
@@ -85,8 +88,8 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		this.initUI();
-		
-		setInterstitialAd();
+
+//		setInterstitialAd();
 	}
 
 	private void initUI() {
@@ -120,7 +123,7 @@ public class MainActivity extends Activity {
 				// // TODO Auto-generated method stub
 				float f = (Float) v.getTag();
 
-				if (comparePrice(f)) {
+				if (true) {
 					// sound
 					SoundUtil.hexat(mContext, SoundUtil.SFX_PASS);
 
@@ -139,6 +142,8 @@ public class MainActivity extends Activity {
 
 					next();
 				} else {
+					Toast.makeText(mContext, "Bạn trả lời sai rồi ...",
+							Toast.LENGTH_LONG).show();
 					SoundUtil.hexat(mContext, SoundUtil.OVER);
 				}
 
@@ -219,7 +224,7 @@ public class MainActivity extends Activity {
 				mScvInfoDetails.setVisibility(View.GONE);
 				mTvInfoDetails
 						.setBackgroundResource(R.drawable.ic_sp_details_normal);
-				mTvInfoSum.setBackgroundResource(R.drawable.ic_sp_sum_focused); 
+				mTvInfoSum.setBackgroundResource(R.drawable.ic_sp_sum_focused);
 			}
 		});
 		mTvInfoDetails.setOnClickListener(new View.OnClickListener() {
@@ -323,29 +328,34 @@ public class MainActivity extends Activity {
 
 		String image = this.mGiaDungEntity.getImage();
 
-		BitmapAjaxCallback ajaxCallback = new BitmapAjaxCallback() {
-			@Override
-			public void async(Context context) {
-				// TODO Auto-generated method stub
-				super.async(context);
-				mProgressBar.setVisibility(View.VISIBLE);
-			}
+//		BitmapAjaxCallback ajaxCallback = new BitmapAjaxCallback() {
+//			@Override
+//			public void async(Context context) {
+//				// TODO Auto-generated method stub
+//				super.async(context);
+//				mProgressBar.setVisibility(View.VISIBLE);
+//			}
+//
+//			@Override
+//			protected void callback(String url, ImageView iv, Bitmap bm,
+//					AjaxStatus status) {
+//				// TODO Auto-generated method stub
+//				super.callback(url, iv, bm, status);
+//				mProgressBar.setVisibility(View.GONE);
+//			}
+//		};
 
-			@Override
-			protected void callback(String url, ImageView iv, Bitmap bm,
-					AjaxStatus status) {
-				// TODO Auto-generated method stub
-				super.callback(url, iv, bm, status);
-				mProgressBar.setVisibility(View.GONE);
-			}
-		};
+//		this.mAQuery
+//				.id(this.mImgProduct)
+//				.progress(this.mProgressBar)
+//				.image(image, false, false, 0, R.drawable.ic_launcher,
+//						ajaxCallback);
+		
+		Bitmap bm = getBitmapFromAsset(image);
+		mImgProduct.setImageBitmap(bm);
 
-		this.mAQuery
-				.id(this.mImgProduct)
-				.progress(this.mProgressBar)
-				.image(image, false, false, 0, R.drawable.ic_launcher,
-						ajaxCallback);
-
+		mProgressBar.setVisibility(View.GONE);
+		
 		Spanned text = Html.fromHtml(this.mGiaDungEntity.getDesc());
 		this.mTvNumber.setText(String.valueOf((mIndex + 1) + ""));
 		this.mTvDesc.setText(text);
@@ -358,6 +368,21 @@ public class MainActivity extends Activity {
 		mIndex++;
 	}
 	
+
+	private Bitmap getBitmapFromAsset(String name) {
+		AssetManager assetManager = getAssets();
+		InputStream istr = null;
+
+		try {
+			istr = assetManager.open("images/" + name);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		Bitmap bitmap = BitmapFactory.decodeStream(istr);
+		return bitmap;
+	}
+
 	private void setInterstitialAd() {
 		AD_UNIT_ID = getResources().getString(R.string.id_admob);
 
