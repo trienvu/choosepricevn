@@ -232,7 +232,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 		this.mTvNumber.setText(mValue);
 		
 		double d = Double.parseDouble(mValue);
-		this.mTvNumber.setText(MonneyT.priceToString(d)  );
+		this.mTvNumber.setText(MonneyT.priceWithoutDecimal( d)  );
 	}
 
 }
