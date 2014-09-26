@@ -78,6 +78,28 @@
         <item name="android:shadowRadius">4.0</item>
     </style>
     
+     <style name="button_caculator1">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/btn_number_selector</item>
+        <item name="android:textSize">@dimen/btn_num_size</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_height">@dimen/dialog_key_height</item>
+    </style>
+    
+     <style name="button_ok">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/btn_number_selector</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    
+     <style name="button_del">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/btn_number_selector</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
     <!-- TRIEN END -->
 
 </resources>

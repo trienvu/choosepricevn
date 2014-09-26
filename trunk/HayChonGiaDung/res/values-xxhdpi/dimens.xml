@@ -21,7 +21,7 @@
     <dimen name="tv_size_23">23sp</dimen>
     <dimen name="tv_sp_size">19sp</dimen>
     <dimen name="tv_sp_info_size">16sp</dimen>
-	<dimen name="btn_num_size">18sp</dimen>
+	<dimen name="btn_num_size">22sp</dimen>
     
     <!-- activity_main -->
     <dimen name="main_view_product_height">200dp</dimen>
