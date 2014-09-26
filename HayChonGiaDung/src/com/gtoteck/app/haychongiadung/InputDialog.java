@@ -1,5 +1,7 @@
 package com.gtoteck.app.haychongiadung;
 
+import com.gtoteck.app.util.MonneyT;
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -228,6 +230,9 @@ public class InputDialog extends Dialog implements OnClickListener {
 	private void addValue(String value) {
 		mValue += value;
 		this.mTvNumber.setText(mValue);
+		
+		double d = Double.parseDouble(mValue);
+		this.mTvNumber.setText(MonneyT.priceToString(d)  );
 	}
 
 }
