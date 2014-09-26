@@ -43,7 +43,7 @@
 	<string name="main_tab_info_sum">Sản phẩm</string>
 	<string name="main_tab_info_details">Chi tiết</string>    
     
-    <string name="dialog_input_ok">Đồng ý</string>
+    <string name="dialog_input_ok">OK</string>
     <string name="dialog_input_cancel">Hủy</string>
     
     <string name="close">Chơi lại</string>
@@ -59,7 +59,6 @@
     <string name="slogan">Nothing is impossible</string>
     
     
-    <string name="id_admob">212112</string>
     
     
     <!-- TRIENVD END -->

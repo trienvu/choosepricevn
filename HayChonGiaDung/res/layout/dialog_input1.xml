@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/dialog_full_holo_light"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="#4CB849"
+            android:gravity="center|right"
+            android:maxLength="24"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/tv_size_25"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3" >
+
+                    <Button
+                        android:id="@+id/btnKey7"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_7" />
+
+                    <Button
+                        android:id="@+id/btnKey8"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_8" />
+
+                    <Button
+                        android:id="@+id/btnKey9"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_9" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3" >
+
+                    <Button
+                        android:id="@+id/btnKey4"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_4" />
+
+                    <Button
+                        android:id="@+id/btnKey5"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_5" />
+
+                    <Button
+                        android:id="@+id/btnKey6"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_6" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3" >
+
+                    <Button
+                        android:id="@+id/btnKey1"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_1" />
+
+                    <Button
+                        android:id="@+id/btnKey2"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_2" />
+
+                    <Button
+                        android:id="@+id/btnKey3"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_3" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3" >
+
+                    <Button
+                        android:id="@+id/btnKey0"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_0" />
+
+                    <Button
+                        android:id="@+id/btnComma"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_comma"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnClear"
+                        style="@style/button_caculator1"
+                        android:text="@string/key_c" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="4" >
+
+
+                <ImageButton
+                    android:id="@+id/imbDelete"
+                    style="@style/button_del"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_delete_w" />
+
+                <com.gtotech.app.customview.ButtonCustomView
+                    android:id="@+id/btnOk"
+                    style="@style/button_ok"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:text="@string/dialog_input_ok"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tv_size_25"
+                    android:textStyle="bold"
+                    app:fontName="MyriadPro-Bold.otf" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

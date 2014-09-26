@@ -64,7 +64,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setBackgroundDrawable(
 				new ColorDrawable(android.R.color.transparent));
-		setContentView(R.layout.dialog_input);
+		setContentView(R.layout.dialog_input1);
 		setCancelable(false);
 		// setTitle("FFFFF");
 		init();
@@ -107,7 +107,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 			}
 		});
 
-		mBtnCancel = (Button) this.findViewById(R.id.btnCancel);
+		/*mBtnCancel = (Button) this.findViewById(R.id.btnCancel);
 		mBtnCancel.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -115,7 +115,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 				// TODO Auto-generated method stub
 				dismiss();
 			}
-		});
+		});*/
 
 		// register event handing
 		mBtnKey9.setOnClickListener(this);
