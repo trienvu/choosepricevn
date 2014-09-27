@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_vic" >
+    android:background="@drawable/bg_menu" >
 
-    <TextView
+    <com.gtotech.app.customview.FontTextView
         android:id="@+id/textView1"
         style="@style/style_more_app_title"
         android:layout_width="wrap_content"
@@ -13,10 +14,10 @@
         android:layout_marginLeft="@dimen/victory_tv_play_margin_left_right"
         android:layout_marginRight="@dimen/victory_tv_play_margin_left_right"
         android:layout_marginTop="30dp"
-        android:background="@drawable/congratulation_frame"
         android:gravity="center"
         android:text="@string/victory"
-        android:textSize="30sp" />
+        android:textSize="45sp"
+        app:fontName="Thorne Shaded.ttf" />
 
     <TextView
         style="@style/style_more_app_title"
@@ -26,10 +27,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/vic_info"
-        android:textColor="#2E2EFE"
-        android:textSize="16sp" />
+        android:textColor="#ff1e00"
+        android:textSize="18sp" />
 
-    <TextView
+    <ImageView
+        android:layout_width="250sp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="74dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img_thongminh" />
+
+    <com.gtotech.app.customview.FontTextView
         android:id="@+id/tvBack"
         style="@style/style_tv_continues"
         android:layout_width="wrap_content"
@@ -37,11 +46,13 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="49dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
         android:background="@drawable/list_item_selector"
         android:clickable="true"
         android:contentDescription="@string/app_name"
-        android:text="@string/close" />
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="@string/close"
+        android:textSize="25sp"
+        app:fontName="DroidSans-Bold.ttf" />
 
 </RelativeLayout>

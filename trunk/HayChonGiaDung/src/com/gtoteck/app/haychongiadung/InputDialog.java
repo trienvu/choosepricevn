@@ -1,17 +1,18 @@
 package com.gtoteck.app.haychongiadung;
 
-import com.gtoteck.app.util.MonneyT;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.gtoteck.app.util.MonneyT;
 
 public class InputDialog extends Dialog implements OnClickListener {
 
@@ -64,7 +65,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setBackgroundDrawable(
 				new ColorDrawable(android.R.color.transparent));
-		setContentView(R.layout.dialog_input1);
+		setContentView(R.layout.dialog_input);
 		setCancelable(true);
 		// setTitle("FFFFF");
 		init();
@@ -75,7 +76,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 	private void init() {
 		// find id
 		mTvNumber = (TextView) this.findViewById(R.id.tvNumber);
-		//mBtnComma = (Button) this.findViewById(R.id.btnComma);
+		// mBtnComma = (Button) this.findViewById(R.id.btnComma);
 		mBtnClear = (Button) this.findViewById(R.id.btnClear);
 		mImbDelete = (ImageButton) this.findViewById(R.id.imbDelete);
 
@@ -107,15 +108,13 @@ public class InputDialog extends Dialog implements OnClickListener {
 			}
 		});
 
-		/*mBtnCancel = (Button) this.findViewById(R.id.btnCancel);
-		mBtnCancel.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				dismiss();
-			}
-		});*/
+		/*
+		 * mBtnCancel = (Button) this.findViewById(R.id.btnCancel);
+		 * mBtnCancel.setOnClickListener(new View.OnClickListener() {
+		 * 
+		 * @Override public void onClick(View v) { // TODO Auto-generated method
+		 * stub dismiss(); } });
+		 */
 
 		// register event handing
 		mBtnKey9.setOnClickListener(this);
@@ -147,14 +146,12 @@ public class InputDialog extends Dialog implements OnClickListener {
 			}
 		});
 
-		/*mBtnComma.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				addComma();
-			}
-		});*/
+		/*
+		 * mBtnComma.setOnClickListener(new View.OnClickListener() {
+		 * 
+		 * @Override public void onClick(View v) { // TODO Auto-generated method
+		 * stub addComma(); } });
+		 */
 	}
 
 	@Override
@@ -201,13 +198,11 @@ public class InputDialog extends Dialog implements OnClickListener {
 			clear();
 		} else {
 			value = value.substring(0, value.length() - 1);
-			//setValue(MonneyT.priceWithoutDecimal(Double.parseDouble(value.toString())));
 			setValue(value);
 		}
-
-		if (value.equals("")) {
-			clear();
-		}
+		/*
+		 * if (value.equals("")) { clear(); }
+		 */
 	}
 
 	private void addComma() {
@@ -226,14 +221,19 @@ public class InputDialog extends Dialog implements OnClickListener {
 	private void setValue(String value) {
 		mValue = value;
 		this.mTvNumber.setText(mValue);
+
+		if (!value.equals("")) {
+			double d = Double.parseDouble(mValue);
+			this.mTvNumber.setText(MonneyT.priceWithoutDecimal(d));
+		}
 	}
 
 	private void addValue(String value) {
 		mValue += value;
 		this.mTvNumber.setText(mValue);
-		
+
 		double d = Double.parseDouble(mValue);
-		this.mTvNumber.setText(MonneyT.priceWithoutDecimal( d)  );
+		this.mTvNumber.setText(MonneyT.priceWithoutDecimal(d));
 	}
 
 }

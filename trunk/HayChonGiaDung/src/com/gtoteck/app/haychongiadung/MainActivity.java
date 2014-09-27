@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		this.initUI();
 
-//		setInterstitialAd();
+		setInterstitialAd();
 	}
 
 	private void initUI() {
@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
 				// // TODO Auto-generated method stub
 				float f = (Float) v.getTag();
 
-				if (true) {
+				if (comparePrice(f)) {
 					// sound
 					SoundUtil.hexat(mContext, SoundUtil.SFX_PASS);
 

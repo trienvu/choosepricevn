@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_vic"
+    android:background="@drawable/bg_menu"
+    android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <TextView
+    <com.gtotech.app.customview.FontTextView
         style="@style/style_more_app_title"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/winscreen_tv_congratulation_height"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_height="@dimen/victory_tv_congratulation_height"
+        android:layout_marginLeft="@dimen/victory_tv_play_margin_left_right"
+        android:layout_marginRight="@dimen/victory_tv_play_margin_left_right"
         android:layout_marginTop="30dp"
-        android:background="@drawable/congratulation_frame"
         android:gravity="center"
         android:text="@string/chucmung"
-        android:textSize="30sp" />
+        android:textSize="45sp"
+        app:fontName="MyriadPro-Bold.otf" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -46,8 +47,19 @@
             android:textSize="23sp"
             android:textStyle="bold" />
     </LinearLayout>
-	
-    <TextView
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img_thongminh" />
+
+    <com.gtotech.app.customview.FontTextView
         android:id="@+id/tvContinue"
         style="@style/style_tv_continues"
         android:layout_width="wrap_content"
@@ -55,11 +67,12 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/winscreen_tv_continues_margin_bottom"
         android:layout_marginTop="@dimen/winscreen_tv_continues_margin_top"
-        android:paddingLeft="35dp"
-        android:paddingRight="35dp"
         android:background="@drawable/list_item_selector"
         android:clickable="true"
         android:contentDescription="@string/app_name"
-        android:text="@string/tv_continues_title" />
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:text="@string/tv_continues_title"
+        app:fontName="DroidSans-Bold.ttf" />
 
 </LinearLayout>
