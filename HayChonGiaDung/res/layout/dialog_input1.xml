@@ -134,13 +134,14 @@
                     <Button
                         android:id="@+id/btnKey0"
                         style="@style/button_caculator1"
+                        android:layout_weight="2"
                         android:text="@string/key_0" />
 
-                    <Button
+                   <!--  <Button
                         android:id="@+id/btnComma"
                         style="@style/button_caculator1"
                         android:text="@string/key_comma"
-                        android:textStyle="bold" />
+                        android:textStyle="bold" /> -->
 
                     <Button
                         android:id="@+id/btnClear"
