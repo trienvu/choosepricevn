@@ -65,7 +65,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 		getWindow().setBackgroundDrawable(
 				new ColorDrawable(android.R.color.transparent));
 		setContentView(R.layout.dialog_input1);
-		setCancelable(false);
+		setCancelable(true);
 		// setTitle("FFFFF");
 		init();
 
@@ -75,7 +75,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 	private void init() {
 		// find id
 		mTvNumber = (TextView) this.findViewById(R.id.tvNumber);
-		mBtnComma = (Button) this.findViewById(R.id.btnComma);
+		//mBtnComma = (Button) this.findViewById(R.id.btnComma);
 		mBtnClear = (Button) this.findViewById(R.id.btnClear);
 		mImbDelete = (ImageButton) this.findViewById(R.id.imbDelete);
 
@@ -147,14 +147,14 @@ public class InputDialog extends Dialog implements OnClickListener {
 			}
 		});
 
-		mBtnComma.setOnClickListener(new View.OnClickListener() {
+		/*mBtnComma.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				addComma();
 			}
-		});
+		});*/
 	}
 
 	@Override
@@ -201,6 +201,7 @@ public class InputDialog extends Dialog implements OnClickListener {
 			clear();
 		} else {
 			value = value.substring(0, value.length() - 1);
+			//setValue(MonneyT.priceWithoutDecimal(Double.parseDouble(value.toString())));
 			setValue(value);
 		}
 
