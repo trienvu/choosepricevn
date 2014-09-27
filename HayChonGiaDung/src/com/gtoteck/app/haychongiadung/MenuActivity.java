@@ -19,7 +19,10 @@ public class MenuActivity extends Activity {
 
 	private Button mBtnPlay;
 
+	private ImageView mImgWheel;
+	private ImageView mImgGuessBall;
 	private ImageView mImgDHBC;
+	private ImageView mImgTivi;
 
 	private ImageView mImgInfo;
 
@@ -31,53 +34,82 @@ public class MenuActivity extends Activity {
 		setContentView(R.layout.activity_menu);
 
 		this.mBtnPlay = (Button) this.findViewById(R.id.btnPlay);
-		this.mBtnPlay.setOnClickListener(new OnClickListener() {
+		this.mImgInfo = (ImageView) this.findViewById(R.id.ivInfo);
+
+		this.mImgWheel = (ImageView) this.findViewById(R.id.ivCnkd);
+		this.mImgGuessBall = (ImageView) this.findViewById(R.id.ivFootballQuiz);
+		this.mImgDHBC = (ImageView) this.findViewById(R.id.ivDhbc);
+		this.mImgTivi = (ImageView) this.findViewById(R.id.ivXemTivi);
+
+		init();
+	}
+
+	private void init() {
+		mBtnPlay.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				Intent intent = new Intent(mContext, MainActivity.class);
 				startActivity(intent);
 			}
 		});
 
-		this.mImgDHBC = (ImageView) this.findViewById(R.id.ivDhbc);
-		this.mImgDHBC.setOnClickListener(new OnClickListener() {
+		mImgInfo.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				final String appPackageName = "com.gtotek.tumchu"; // Can
-				// also
-				// use
-				// getPackageName(),
-				// as below
+				AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+				builder.setTitle("Thông tin");
+				builder.setIcon(android.R.drawable.ic_dialog_info);
+				builder.setMessage(getResources()
+						.getText(R.string.version_info).toString());
+				builder.setNegativeButton("OK",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// TODO Auto-generated method stub
+								dialog.dismiss();
+							}
+						});
+				builder.show();
+			}
+		});
+
+		mImgWheel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				final String appPackageName = "com.gtotek.wheeloffortune"; 
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri
 						.parse("market://details?id=" + appPackageName)));
 			}
 		});
 
-		this.mImgInfo = (ImageView) this.findViewById(R.id.ivInfo);
-
-		this.mImgInfo.setOnClickListener(new OnClickListener() {
-
+		mImgGuessBall.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-				builder.setTitle("Th�ng tin");
-				builder.setIcon(android.R.drawable.ic_dialog_info);
-				builder.setMessage(getResources().getText(R.string.version_info)
-						.toString());
-				builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+				final String appPackageName = "com.gtotek.footballquiz";
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri
+						.parse("market://details?id=" + appPackageName)));
+			}
+		});
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						dialog.dismiss();
-					}
-				});
-				builder.show();
+		mImgDHBC.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				final String appPackageName = "com.gtotek.tumchu";
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri
+						.parse("market://details?id=" + appPackageName)));
+			}
+		});
+
+		mImgTivi.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				final String appPackageName = "com.gtotek.imedia";
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri
+						.parse("market://details?id=" + appPackageName)));
 			}
 		});
 	}

@@ -9,7 +9,7 @@
         android:startColor="#FFFFFF" />
     <!--
          <gradient android:startColor="#FF66CFE6" android:centerColor="#FF207FB9" 
-        android:endColor="#FF0060B8" android:angle="270"/>
+        android:endColor="#FF0060B8" android:angle="270"/>
     -->
 
     <stroke
@@ -22,6 +22,6 @@
         android:right="5dp"
         android:top="8dp" />
 
-    <corners android:radius="20dp" />
+    <corners android:radius="30dp" />
 
 </shape>

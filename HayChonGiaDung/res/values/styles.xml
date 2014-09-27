@@ -45,7 +45,7 @@
     <style name="style_more_app_title">
         <item name="android:textSize">19.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff0000ff</item>
+        <item name="android:textColor">#fd1e00</item>
         <item name="android:typeface">serif</item>
         <item name="android:shadowColor">#ffffffff</item>
         <item name="android:shadowDx">1.0</item>
@@ -56,7 +56,7 @@
     <style name="style_tv_continues">
         <item name="android:textSize">25.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ff0000ff</item>
+        <item name="android:textColor">#ffffff</item>
         <item name="android:shadowColor">#ffffffff</item>
         <item name="android:shadowDx">1.0</item>
         <item name="android:typeface">sans</item>
